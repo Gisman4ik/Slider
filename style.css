@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.slider-wrapper {
+  height: 622px;
+  padding: 50px 0;
+  background-color: #e2eb91;
+}
+
+.slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  width: 800px;
+  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.slider__dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 290px 0 0;
+}
+
+.slider__dot {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #f19191;
+  margin: 0 20px;
+}
+
+.slider__dot.active {
+  display: block;
+}
+
+.slider__dot.chosen {
+  background-color: #e73939;
+}
+
+.slider__dot:hover {
+  cursor: pointer;
+}
+
+.slider__categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.slider__arrow {
+  position: absolute;
+  top: 20%;
+  cursor: pointer;
+}
+
+.slider__arrow_left {
+  padding: 100px 150px 100px 0;
+}
+
+.slider__arrow_right {
+  left: 75%;
+  padding: 100px 0 100px 150px;
+}
+
+.slider__arrow img {
+  width: 50px;
+}
+
+.category {
+  margin: 0 30px 30px;
+  padding: 5px;
+  font-size: 20px;
+  background-color: #b6e9a6;
+  border-radius: 5px;
+}
+
+.category.current {
+  background-color: #59e030;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.category:hover {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.slides-container {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  position: relative;
+  -webkit-animation: 0.5s ease-in-out;
+          animation: 0.5s ease-in-out;
+  margin: 0 auto;
+}
+
+.slide img {
+  border-radius: 40%;
+}
+
+.slides-category {
+  position: relative;
+}
+
+.active,
+.nextCategory {
+  display: block;
+}
+
+.next {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.to-left {
+  -webkit-animation-name: left;
+          animation-name: left;
+}
+
+.from-right {
+  -webkit-animation-name: right;
+          animation-name: right;
+}
+
+.to-right {
+  -webkit-animation-name: right;
+          animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  -webkit-animation-name: left;
+          animation-name: left;
+  animation-direction: reverse;
+}
+
+@-webkit-keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@-webkit-keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */
