@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .slider-wrapper {
+    height: 622px;
+    padding: 50px 0;
+    background-color: rgb(226, 235, 145);;
+  }
+
+  .slider {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+    &__dots {
+      display: flex;
+      justify-content: center;   
+      margin: 290px 0 0;
+    }
+    &__dot {
+        display: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: rgb(241, 145, 145);
+        margin: 0 20px;
+        &.active {
+          display: block;
+        }
+        &.chosen {
+          background-color: rgb(231, 57, 57);
+        }
+        &:hover{
+          cursor: pointer;
+        }
+    }
+    &__categories {
+        display: flex;
+        justify-content: center;
+    }
+    &__arrow {
+    position: absolute;
+    top: 20%;
+    cursor: pointer;
+      &_left {
+        padding: 100px 150px 100px 0;
+      }
+      &_right {
+        left: 75%;
+        padding: 100px 0 100px 150px;
+    }
+      & img {
+        width: 50px;
+      }
+    }
+  }
+  
+  .category {
+    margin: 0 30px 30px;
+    padding: 5px;
+    font-size: 20px;
+    background-color: rgb(182, 233, 166);
+    border-radius: 5px;
+    &.current {
+        background-color: rgb(89, 224, 48);
+        font-weight: 600;
+        cursor: pointer;
+    }
+    &:hover {
+        font-weight: 600;
+        cursor: pointer;
+    }
+  }
+
+  .slides-container {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .slide {
+    display: none;
+    position: relative;
+            animation: 0.5s ease-in-out;
+    margin: 0 auto;
+    & img {
+        border-radius: 40%;
+    }
+  }
+  
+  .slides-category {
+      position: relative;
+  }
+
+  .active,
+  .nextCategory {
+    display: block;
+  }
+  
+  .next {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  
+  .to-left {
+            animation-name: left;
+  }
+  
+  .from-right {
+            animation-name: right;
+  }
+  
+  .to-right {
+            animation-name: right;
+    animation-direction: reverse;
+  }
+  
+  .from-left {
+            animation-name: left;
+    animation-direction: reverse;
+  }
+  
+  @keyframes left {   
+    from {
+      left: 0;
+    }
+    to {
+      left: -100%;
+    }
+  }
+  
+  @keyframes right {
+    from {
+      left: 100%;
+    }
+    to {
+      left: 0;
+    }
+  }
+  
