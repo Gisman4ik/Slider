@@ -4,10 +4,12 @@
   border: 0;
 }
 
-.slider-wrapper {
-  height: 622px;
-  padding: 50px 0;
+body {
   background-color: #e2eb91;
+}
+
+.slider-wrapper {
+  padding: 50px 0;
 }
 
 .slider {
