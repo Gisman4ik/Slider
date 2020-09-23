@@ -110,7 +110,7 @@ const showSpecificSlide = (n) => {
 
 for (let i = 0; i < sliderDots.length; i++) {
 	let dot = sliderDots[i];
-	dot.addEventListener('click',function(e) {
+	dot.addEventListener('touchstart',function(e) {
 		if (isEnabled && currentSlide !== +e.target.dataset.dotNumber) {
 			showSpecificSlide(+e.target.dataset.dotNumber)
 		}
@@ -136,7 +136,7 @@ const removeChosenDotClass = () => {
 
 for (let i = 0; i < sliderCategoryBtns.length; i++) {
 	let categoryBtn = sliderCategoryBtns[i];
-	categoryBtn.addEventListener('click', function() {
+	categoryBtn.addEventListener('touchstart', function() {
 		if (currentCategory === +categoryBtn.dataset.categoryNumber && currentSlide === 0) return;
 		let hideDirection = currentCategory >= +categoryBtn.dataset.categoryNumber ? 'to-right':'to-left';
 		let showDirection = currentCategory >= +categoryBtn.dataset.categoryNumber ? 'from-left':'from-right';
@@ -155,13 +155,13 @@ for (let i = 0; i < sliderCategoryBtns.length; i++) {
 	})
 }
 
-document.querySelector('.slider__arrow_left').addEventListener('click', function() {
+document.querySelector('.slider__arrow_left').addEventListener('touchstart', function() {
 	if (isEnabled) {
 		previousSlide(currentSlide);
 	}
 });
 
-document.querySelector('.slider__arrow_right').addEventListener('click', function() {
+document.querySelector('.slider__arrow_right').addEventListener('touchstart', function() {
 	if (isEnabled) {
 		nextSlide(currentSlide);
 	}
