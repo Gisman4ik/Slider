@@ -6,6 +6,8 @@ let currentSlide = 0;
 let isEnabled = true;
 let isNewCategory = false;
 let sliderDots;
+const supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+const clickEvent = !!supportsTouch ? 'touchend' : 'click';
 
 const createDots = () => {
 	const dotContainer = document.createElement('div');
@@ -110,7 +112,7 @@ const showSpecificSlide = (n) => {
 
 for (let i = 0; i < sliderDots.length; i++) {
 	let dot = sliderDots[i];
-	dot.addEventListener('touchstart',function(e) {
+	dot.addEventListener(clickEvent,function(e) {
 		if (isEnabled && currentSlide !== +e.target.dataset.dotNumber) {
 			showSpecificSlide(+e.target.dataset.dotNumber)
 		}
@@ -128,7 +130,6 @@ const removeCurrentBtnsClass = () => {
 const removeChosenDotClass = () => {
 	for (let k = 0; k < sliderDots.length; k++) {
 		if (sliderDots[k].classList.contains('chosen')) {
-			console.log('dsd')
 			sliderDots[k].classList.remove('chosen');
 		}
 	}
@@ -136,7 +137,7 @@ const removeChosenDotClass = () => {
 
 for (let i = 0; i < sliderCategoryBtns.length; i++) {
 	let categoryBtn = sliderCategoryBtns[i];
-	categoryBtn.addEventListener('touchstart', function() {
+	categoryBtn.addEventListener(clickEvent, function() {
 		if (currentCategory === +categoryBtn.dataset.categoryNumber && currentSlide === 0) return;
 		let hideDirection = currentCategory >= +categoryBtn.dataset.categoryNumber ? 'to-right':'to-left';
 		let showDirection = currentCategory >= +categoryBtn.dataset.categoryNumber ? 'from-left':'from-right';
@@ -155,13 +156,13 @@ for (let i = 0; i < sliderCategoryBtns.length; i++) {
 	})
 }
 
-document.querySelector('.slider__arrow_left').addEventListener('touchend', function() {
+document.querySelector('.slider__arrow_left').addEventListener(clickEvent, function() {
 	if (isEnabled) {
 		previousSlide(currentSlide);
 	}
 });
 
-document.querySelector('.slider__arrow_right').addEventListener('touchend', function() {
+document.querySelector('.slider__arrow_right').addEventListener(clickEvent, function() {
 	if (isEnabled) {
 		nextSlide(currentSlide);
 	}
