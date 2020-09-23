@@ -155,13 +155,13 @@ for (let i = 0; i < sliderCategoryBtns.length; i++) {
 	})
 }
 
-document.querySelector('.slider__arrow_left').addEventListener('touchstart', function() {
+document.querySelector('.slider__arrow_left').addEventListener('touchend', function() {
 	if (isEnabled) {
 		previousSlide(currentSlide);
 	}
 });
 
-document.querySelector('.slider__arrow_right').addEventListener('touchstart', function() {
+document.querySelector('.slider__arrow_right').addEventListener('touchend', function() {
 	if (isEnabled) {
 		nextSlide(currentSlide);
 	}

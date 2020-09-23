@@ -198,4 +198,30 @@ body {
     left: 0;
   }
 }
+
+@media screen and (max-width: 415px) {
+  .slider {
+    width: 100%;
+  }
+  .slider__dots {
+    margin: 130px 0 0;
+  }
+  .slider__arrow {
+    top: 30%;
+  }
+  .slider__arrow_left {
+    padding: 20px 0 20px 0px;
+    right: 75%;
+  }
+  .slider__arrow_right {
+    left: 75%;
+    padding: 20px 0 20px 0px;
+  }
+  .category {
+    margin: 10px 10px;
+  }
+  .slide img {
+    width: 170px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
